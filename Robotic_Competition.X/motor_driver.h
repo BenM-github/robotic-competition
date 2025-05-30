@@ -4,22 +4,18 @@
  *
  * Created on 9. Mai 2025, 16:07
  */
-#ifndef USART_H
-#define	USART_H
+#ifndef motor_driver_H
+#define	motor_driver_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <avr/io.h>
 
-#define FOSC 8000000
-#define BAUD 2400
-#define MYUBRR 207
+//Left Motor:   cost    --> PB2_L, PD6_L
+//              Reverse --> PB2_L, PD6_H
+//              Forward --> PB2_H, PD6_L
+//              Break   --> PB2_H, PD6_H
 
-void USART_init();
 
-void USART_Transmit(unsigned char data);
-
-unsigned char USART_Recieve();
-
-#endif	/* USART_H */
+#endif	/* motor_driver_H */
 

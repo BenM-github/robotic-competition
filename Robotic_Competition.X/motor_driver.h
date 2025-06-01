@@ -1,9 +1,4 @@
-/* 
- * File:   USART.h
- * Author: Aaron Schnarr
- *
- * Created on 9. Mai 2025, 16:07
- */
+
 #ifndef motor_driver_H
 #define	motor_driver_H
 

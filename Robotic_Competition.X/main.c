@@ -7,12 +7,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "motor_driver.h"
+#include "USART.h"
 /*
  * 
  */
-int main(int argc, char** argv) {
+int main() {
 
-    return (EXIT_SUCCESS);
+    return ();
 }
 

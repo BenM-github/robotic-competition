@@ -1,6 +1,6 @@
 
-#ifndef motor_driver_H
-#define	motor_driver_H
+#ifndef MOTOR_DRIVER_H
+#define	MOTOR_DRIVER_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,9 +30,9 @@
 
 void motor_init(void);
 
-void velocity (uint8_t velo_l, uint8_t velo_r);
+void velocity (uint16_t velo_l, uint16_t velo_r);
 
 void driving_direction(char direc_l, char direc_r);
 
-#endif	/* motor_driver_H */
+#endif	/* MOTOR_DRIVER_H */
 

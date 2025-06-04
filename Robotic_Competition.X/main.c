@@ -28,7 +28,7 @@ int main() {
         
         driving_direction('S', 'S');
         velocity(0,0);
-        _delay_ms(1000);
+        _delay_ms(5000);
       
     
     }

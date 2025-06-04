@@ -1,8 +1,8 @@
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "ISRs.h"
 #include "motor_driver.h"
 #include "USART.h"
+#include "ADC.h"
 #include <util/delay.h>
 
 
@@ -11,28 +11,15 @@
  * 
  */
 int main() {
-
     
-        
-    motor_init();
+    DDRC |= (1<<PC1);
     
-    while(1){
-
-        for(uint16_t i = 0; i<10000; i++){
-            velocity(i, i);
-            driving_direction('F', 'F');
-            _delay_ms(100);
-            
-            
-        }
-        
-        driving_direction('S', 'S');
-        velocity(0,0);
-        _delay_ms(1000);
-      
+    sei();
     
+    ISR(TIMER_CAPT_vect){
+        PORTC ^= (1<<PC1);
     }
-    
+/
     
     return(0);
 }

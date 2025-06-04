@@ -28,12 +28,12 @@ CP=cp
 CND_CONF=default
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
-OUTPUT_SUFFIX=
+OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
 FINAL_IMAGE=${DISTDIR}/Robotic_Competition.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
-OUTPUT_SUFFIX=
+OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
 FINAL_IMAGE=${DISTDIR}/Robotic_Competition.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c UASRT.c motor_driver.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c UASRT.c motor_driver.c ADC.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/UASRT.o ${OBJECTDIR}/motor_driver.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/UASRT.o.d ${OBJECTDIR}/motor_driver.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/UASRT.o ${OBJECTDIR}/motor_driver.o ${OBJECTDIR}/ADC.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/UASRT.o.d ${OBJECTDIR}/motor_driver.o.d ${OBJECTDIR}/ADC.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/UASRT.o ${OBJECTDIR}/motor_driver.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/UASRT.o ${OBJECTDIR}/motor_driver.o ${OBJECTDIR}/ADC.o
 
 # Source Files
-SOURCEFILES=main.c UASRT.c motor_driver.c
+SOURCEFILES=main.c UASRT.c motor_driver.c ADC.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I "${DFP_DIR}/include"
@@ -122,6 +122,12 @@ ${OBJECTDIR}/motor_driver.o: motor_driver.c  .generated_files/flags/default/483a
 	@${RM} ${OBJECTDIR}/motor_driver.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/motor_driver.o.d" -MT "${OBJECTDIR}/motor_driver.o.d" -MT ${OBJECTDIR}/motor_driver.o  -o ${OBJECTDIR}/motor_driver.o motor_driver.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/ADC.o: ADC.c  .generated_files/flags/default/9f7d400f6e36a1a42a5fddbbd8d16396054d7710 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ADC.o.d 
+	@${RM} ${OBJECTDIR}/ADC.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/ADC.o.d" -MT "${OBJECTDIR}/ADC.o.d" -MT ${OBJECTDIR}/ADC.o  -o ${OBJECTDIR}/ADC.o ADC.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/a456577acfb9f058364e7bd32b4500122e9636c2 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
@@ -140,6 +146,12 @@ ${OBJECTDIR}/motor_driver.o: motor_driver.c  .generated_files/flags/default/ced9
 	@${RM} ${OBJECTDIR}/motor_driver.o.d 
 	@${RM} ${OBJECTDIR}/motor_driver.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/motor_driver.o.d" -MT "${OBJECTDIR}/motor_driver.o.d" -MT ${OBJECTDIR}/motor_driver.o  -o ${OBJECTDIR}/motor_driver.o motor_driver.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/ADC.o: ADC.c  .generated_files/flags/default/d55dad7fd50fe833429410972d40641dec4d5110 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ADC.o.d 
+	@${RM} ${OBJECTDIR}/ADC.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega8 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/ADC.o.d" -MT "${OBJECTDIR}/ADC.o.d" -MT ${OBJECTDIR}/ADC.o  -o ${OBJECTDIR}/ADC.o ADC.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 endif
 

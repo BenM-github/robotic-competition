@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>USART.h</itemPath>
       <itemPath>motor_driver.h</itemPath>
+      <itemPath>ADC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -22,6 +23,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>UASRT.c</itemPath>
       <itemPath>motor_driver.c</itemPath>
+      <itemPath>ADC.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

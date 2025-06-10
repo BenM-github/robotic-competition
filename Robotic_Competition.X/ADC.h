@@ -8,16 +8,13 @@
 #ifndef ADC_H
 #define	ADC_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
+#include <stdio.h>
+#include <stdlib.h>
+#include <avr/io.h>
 
+void ADC_init();
 
-
-
-#ifdef	__cplusplus
-}
-#endif
+void ADC_read();
 
 #endif	/* ADC_H */
 

@@ -7,8 +7,6 @@
 #ifndef USART_H
 #define	USART_H
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <avr/io.h>
 
 #define FOSC 8000000
